@@ -4,208 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fff7f8">
-  <meta name="description" content="AwwList helps you save the tiny things people mention, before you forget them. Be the friend who remembers.">
-  <title>AwwList · Gift ideas, before you forget</title>
+  <meta name="description" content="AwwList is a quiet place to keep the little things people love.">
+  <title>AwwList · Remember the little things</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/anaclumos/sunghyun-sans@latest/dist/web/css/sunghyun-sans.min.css">
   <link rel="icon" type="image/png" href="./awwlist-logo.png">
   <link rel="apple-touch-icon" href="./awwlist-logo.png">
-  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydhc4aufrz");
+  </script>
   <style>
-    :root{--ink:#1c1c1e;--muted:#6e6e73;--red:#ee1238;--soft:#fff2f4;--line:rgba(28,28,30,.08);--card:rgba(255,255,255,.78)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 50% -10%,#ffe3e8 0,#fff7f8 30%,#fff 66%);-webkit-font-smoothing:antialiased}
-    a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:20px;text-decoration:none}
-    .brand img{width:34px;height:34px;object-fit:contain}
-    .navlinks{display:flex;gap:22px;font-size:14px;align-items:center}
-    .navlinks a{color:var(--muted);text-decoration:none}
-    .navcta{padding:10px 20px;border-radius:999px;background:var(--red);color:#fff !important;font-weight:700;box-shadow:0 10px 24px rgba(238,18,56,.28);transition:transform .18s ease,box-shadow .18s ease}
-    .navcta:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(238,18,56,.34)}
-    .hero{min-height:640px;display:grid;place-items:center;text-align:center;padding:70px 0 90px}
-    .hero-inner{max-width:780px}
-    .logo{width:min(220px,46vw);height:auto;filter:drop-shadow(0 24px 38px rgba(238,18,56,.18));animation:pop .8s cubic-bezier(.16,1,.3,1) both,floaty 5.5s ease-in-out 1.1s infinite alternate}
-    @keyframes pop{from{opacity:0;transform:scale(.55) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-    @keyframes floaty{from{transform:translateY(0)}to{transform:translateY(-10px)}}
-    .eyebrow{margin:28px 0 14px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
-    h1{margin:0;font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-.055em}
-    .lead{max-width:650px;margin:26px auto 0;font-size:clamp(19px,2.4vw,25px);line-height:1.45;color:var(--muted);letter-spacing:-.02em}
-    .pill{display:inline-flex;margin-top:32px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px);font-size:14px;color:#55555a}
-    .ctarow{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:14px}
-    .cta{display:inline-flex;align-items:center;gap:12px;padding:20px 38px;border-radius:999px;background:var(--red);color:#fff;font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;box-shadow:0 18px 42px rgba(238,18,56,.34);transition:transform .18s ease,box-shadow .18s ease}
-    .cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 24px 54px rgba(238,18,56,.42)}
-    .cta-xl{font-size:clamp(21px,3.6vw,30px);padding:26px 54px}
-    .cta-inv{background:#fff;color:var(--red);box-shadow:0 18px 42px rgba(0,0,0,.18)}
-    .cta-inv:hover{box-shadow:0 24px 54px rgba(0,0,0,.24)}
-    .micro{font-size:13px;color:var(--muted)}
-    .rise{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
-    .d1{animation-delay:.08s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}
-    @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease var(--d,0s),transform .85s cubic-bezier(.16,1,.3,1) var(--d,0s)}
-    .reveal.in{opacity:1;transform:none}
-    .card,.qcard{transition:transform .25s ease,box-shadow .25s ease}
-    .card:hover,.qcard:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.08)}
-    .cta-xl{animation:breathe 2.8s ease-in-out infinite}
-    @keyframes breathe{0%,100%{box-shadow:0 18px 42px rgba(0,0,0,.18)}50%{box-shadow:0 20px 64px rgba(255,90,120,.45)}}
-    .ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(12px)}
-    .ticker-track{display:flex;width:max-content;animation:scroll 30s linear infinite}
-    .ticker-track span{padding:14px 26px;font-size:15px;white-space:nowrap;color:var(--muted)}
-    @keyframes scroll{to{transform:translateX(-50%)}}
-    @media (prefers-reduced-motion:reduce){.ticker-track,.logo,.rise,.reveal,.cta-xl{animation:none !important}.reveal,.card,.qcard{transition:none !important}.reveal{opacity:1 !important;transform:none !important}}
-    .section{padding:90px 0}
-    .section h2{font-size:clamp(34px,5vw,58px);letter-spacing:-.045em;line-height:1.05;margin:0 0 42px}
-    .center{text-align:center}.center h2{margin-inline:auto}
-    .kicker{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px;min-height:250px;box-shadow:0 12px 36px rgba(0,0,0,.035);backdrop-filter:blur(18px)}
-    .card-sm{min-height:0}
-    .icon{font-size:34px}
-    .card h3{font-size:22px;margin:36px 0 10px;letter-spacing:-.025em}
-    .card p{margin:0;color:var(--muted);line-height:1.55}
-    .statement{font-size:clamp(34px,5.6vw,64px);letter-spacing:-.045em;line-height:1.05;margin:0;max-width:900px}
-    .statement .hl{color:var(--red)}
-    .sub{max-width:640px;margin:28px auto 0;font-size:clamp(18px,2.2vw,23px);line-height:1.5;color:var(--muted);letter-spacing:-.015em}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
-    .stat{border-radius:28px;padding:34px 24px;background:var(--soft);border:1px solid rgba(238,18,56,.08);text-align:center}
-    .stat b{display:block;font-size:clamp(34px,4.5vw,54px);letter-spacing:-.045em;line-height:1;margin-bottom:10px}
-    .stat span{color:var(--muted);font-size:14px;line-height:1.45;display:block}
-    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .qcard{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 12px 36px rgba(0,0,0,.035);backdrop-filter:blur(18px)}
-    .qcard .q{font-size:17px;line-height:1.55;margin:0 0 18px;letter-spacing:-.01em}
-    .qcard .who{font-size:13px;color:var(--muted);font-weight:650}
-    .faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
-    .faq details{border-bottom:1px solid var(--line)}
-    .faq summary{cursor:pointer;font-weight:650;font-size:19px;letter-spacing:-.02em;padding:20px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";font-size:26px;font-weight:600;color:var(--red);line-height:1}
-    .faq details[open] summary::after{content:"–"}
-    .faq p{color:var(--muted);line-height:1.6;margin:0 0 22px;font-size:16px}
-    .mega{margin:20px auto 96px;padding:clamp(56px,9vw,110px) clamp(28px,6vw,90px);border-radius:44px;background:linear-gradient(135deg,#ff3150,#e90032);color:#fff;text-align:center;box-shadow:0 30px 80px rgba(238,18,56,.35)}
-    .mega h2{font-size:clamp(46px,9vw,110px);letter-spacing:-.055em;line-height:.96;margin:0;text-transform:lowercase}
-    .mega p{max-width:620px;margin:26px auto 0;font-size:clamp(17px,2.2vw,22px);line-height:1.5;opacity:.92}
-    .mega .ctarow{margin-top:38px}
-    .footer{padding:38px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    .footer-links{display:flex;gap:20px}
-    .footer a{text-decoration:none}
-    .footer a:hover,.navlinks a:hover{color:var(--ink)}
-    @media(max-width:760px){.navlinks{gap:12px}.hero{min-height:600px;padding-top:40px}.grid,.quotes,.stats{grid-template-columns:1fr}.card{min-height:0}.section{padding:65px 0}.mega{border-radius:32px}}
+    :root{--ink:#1c1c1e;--muted:#717177;--red:#ff3049;--soft:#fff3f5;--line:rgba(28,28,30,.1)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#fff3f5 0,#fff 32%);color:var(--ink);font-family:"Sunghyun Sans",ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}.wrap{width:min(1100px,calc(100% - 48px));margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:82px;gap:20px}.brand{display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:750;letter-spacing:-.035em;text-decoration:none}.brand img{width:33px;height:33px;object-fit:contain}.nav-actions{display:flex;align-items:center;gap:24px}.nav-actions a{font-size:14px;font-weight:550;text-decoration:none}.nav-actions .nav-link{color:var(--muted)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:15px 23px;border:0;border-radius:999px;background:var(--red);color:#fff;font:700 16px/1 inherit;letter-spacing:-.02em;text-decoration:none;box-shadow:0 14px 28px rgba(255,48,73,.25);transition:transform .18s ease,box-shadow .18s ease;cursor:pointer}.button:hover{transform:translateY(-2px);box-shadow:0 19px 34px rgba(255,48,73,.32)}.button.small{min-height:42px;padding:11px 17px;font-size:14px}
+    .hero{padding:88px 0 126px;text-align:center}.hero-inner{max-width:780px;margin:0 auto}.hero-logo{width:min(160px,38vw);height:auto;margin-bottom:32px;filter:drop-shadow(0 16px 26px rgba(255,48,73,.16))}h1,h2,p{margin:0}h1{font-size:clamp(50px,7.2vw,82px);font-weight:750;letter-spacing:-.068em;line-height:.98;text-wrap:balance}h2{font-size:clamp(38px,5.1vw,62px);font-weight:700;letter-spacing:-.06em;line-height:1.02;text-wrap:balance}.hero p{max-width:550px;margin:26px auto 0;color:var(--muted);font-size:clamp(19px,2.2vw,23px);line-height:1.48;letter-spacing:-.025em}.hero .button{margin-top:34px}.launch{margin-top:15px;color:var(--muted);font-size:13px;line-height:1.45}
+    .story{padding:98px 0;border-top:1px solid var(--line)}.story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.7fr);align-items:center;gap:clamp(52px,10vw,145px)}.story-copy p{max-width:475px;margin-top:24px;color:var(--muted);font-size:clamp(18px,2vw,22px);line-height:1.52;letter-spacing:-.022em}.story-copy .plain-quote{color:var(--ink);font-size:clamp(22px,2.6vw,30px);font-weight:650;line-height:1.25}.story-copy .note{margin-top:35px;color:var(--ink);font-size:17px;font-weight:600}.screen{width:min(100%,350px);margin:0 auto;overflow:hidden;border:1px solid rgba(255,48,73,.14);border-radius:34px;background:#fff;box-shadow:0 26px 64px rgba(28,28,30,.14)}.screen img{display:block;width:100%;height:auto}
+    .ending{padding:122px 0;text-align:center}.ending h2{max-width:700px;margin:0 auto}.ending p{max-width:520px;margin:23px auto 0;color:var(--muted);font-size:19px;line-height:1.5;letter-spacing:-.02em}.ending .button{margin-top:34px}.ending .launch{color:var(--muted)}.footer{border-top:1px solid var(--line);padding:30px 0 42px;color:var(--muted);font-size:13px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px}.footer-links{display:flex;gap:18px}.footer a{text-decoration:none}.footer a:hover{color:var(--ink)}
+    .modal[hidden],.modal-main[hidden],.browser-help[hidden]{display:none}.modal{position:fixed;z-index:10;inset:0;display:grid;place-items:center;padding:22px;background:rgba(28,28,30,.42);backdrop-filter:blur(8px)}.modal-card{position:relative;width:min(100%,440px);padding:34px;border-radius:30px;background:#fff;box-shadow:0 24px 80px rgba(28,28,30,.24)}.modal-close{position:absolute;top:14px;right:14px;display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:var(--soft);color:var(--ink);font-size:25px;line-height:1;cursor:pointer}.modal-icon{display:grid;place-items:center;width:54px;height:54px;margin-bottom:20px;border-radius:17px;background:var(--soft);color:var(--red);font-size:27px}.modal h2{font-size:27px;letter-spacing:-.04em}.modal-copy,.browser-help p{margin-top:13px;color:var(--muted);font-size:16px;line-height:1.5}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}.modal-button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 14px;border:0;border-radius:14px;background:var(--red);color:#fff;font:700 15px/1 inherit;cursor:pointer}.modal-button.secondary{background:var(--soft);color:var(--red)}.modal-status{min-height:20px;margin:12px 0 0;color:var(--muted);font-size:13px;text-align:center}.browser-steps{display:grid;gap:12px;margin:24px 0}.browser-step{display:flex;align-items:flex-start;gap:12px;padding:13px;border-radius:16px;background:var(--soft);color:var(--muted);font-size:14px;line-height:1.4}.browser-symbol{display:grid;flex:0 0 34px;place-items:center;width:34px;height:34px;border-radius:10px;background:#fff;color:var(--red);font-size:20px;font-weight:800;box-shadow:0 1px 4px rgba(28,28,30,.1)}
+    @media(max-width:680px){.wrap{width:min(100% - 32px,520px)}.nav{height:68px}.brand{font-size:18px}.brand img{width:30px;height:30px}.nav-actions{gap:0}.nav-link{display:none}.button.small{min-height:40px;padding:10px 15px}.hero{padding:55px 0 76px}.hero-logo{width:124px;margin-bottom:27px}h1{font-size:clamp(45px,13vw,60px);line-height:1}.hero p{margin-top:21px;font-size:19px}.hero .button{width:100%;margin-top:28px}.launch{padding:0 8px}.story{padding:70px 0}.story-grid{grid-template-columns:1fr;gap:42px}.story-copy{text-align:center}.story-copy p{margin-inline:auto}.story-copy .note{margin-top:28px}.screen{width:min(100%,345px);border-radius:30px}.ending{padding:78px 0}.ending p{font-size:18px}.ending .button{width:100%;margin-top:28px}.footer{padding:26px 0 34px}.footer-row{flex-direction:column;text-align:center}.footer-links{justify-content:center}.modal-card{padding:30px 24px}.modal-actions{grid-template-columns:1fr}.modal h2{font-size:25px}}
+    /* Product and download share the first screen. */
+    body{background:#faf9f8}
+    header.wrap{position:sticky;top:0;z-index:5;width:100%;padding:0 max(24px,calc((100vw - 1160px)/2));background:rgba(250,249,248,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(28,28,30,.05)}
+    .nav{height:76px}.nav-actions a{font-weight:600}.brand img{width:30px;height:30px}
+    .button{gap:11px;background:linear-gradient(#303030,#111);font-family:inherit;font-size:16px;font-weight:650;line-height:1.2;min-height:62px;padding:18px 30px;box-shadow:inset 0 1px 0 #ffffff30,0 5px 12px #00000012;border:1px solid #161616}
+    .button:hover{background:#292929;box-shadow:0 8px 18px #00000020;transform:translateY(-1px)}
+    .button::before{content:"";width:19px;height:22px;flex:none;background:url('apple.svg') center/contain no-repeat;filter:invert(1)}.button.small{min-height:42px;padding:10px 19px;font-size:14px}.button.small::before{width:14px;height:17px}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ff3049;outline-offset:5px}
+    .hero{padding:40px 0 56px}.hero-layout{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:64px;max-width:1160px}
+    .product-stage{background:#f4e9e9;border-radius:32px;padding:28px;display:grid;place-items:center;min-width:0}
+    .product-stage .screen{width:272px;max-width:100%;border-radius:28px;box-shadow:0 22px 50px #623b3b25;border:1px solid #fff}
+    .hero-content{text-align:center;padding:16px 0}.hero-logo{width:92px;margin-bottom:28px;filter:drop-shadow(0 8px 10px #ff30491a)}
+    h1{font-size:clamp(42px,4.7vw,62px);font-weight:800;letter-spacing:-.055em;line-height:1.04}
+    .hero-content p{font-size:19px;max-width:390px;line-height:1.5;margin:22px auto 0}.hero-content .button{margin-top:30px}
+    .hero-content .download-detail,.ending .download-detail{font-size:13px;line-height:1.5;margin:12px auto 0;color:#646469}
+    .hero-content .launch{font-size:12px;max-width:300px;line-height:1.6;margin:19px auto 0;color:#77777c}
+    .details-section{padding:48px 0 72px}.details-intro{text-align:center;max-width:580px;margin:0 auto 38px}.details-intro h2{font-size:clamp(30px,3.5vw,44px);line-height:1.12;letter-spacing:-.045em}.details-intro p{font-size:17px;color:var(--muted);line-height:1.6;margin-top:16px}
+    .details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;max-width:940px;margin:auto}.detail{border-top:1px solid #dedbd9;padding-top:24px}.detail h3{font-size:18px;letter-spacing:-.02em;margin:0 0 10px;font-weight:700}.detail p{font-size:15px;line-height:1.6;color:var(--muted);margin:0}
+    .ending{padding:60px 0 64px;border-top:1px solid var(--line)}.ending h2{font-size:clamp(32px,4vw,46px);line-height:1.08}.ending p{font-size:17px;max-width:450px;margin-top:18px}.ending .launch{font-size:13px;line-height:1.6;max-width:430px}.ending .button{margin-top:25px}
+    .offer-details{max-width:440px;margin:19px auto 0;color:var(--muted);font-size:13px;line-height:1.6}.offer-details summary{cursor:pointer;text-underline-offset:4px;text-decoration:underline}.offer-details p{font-size:13px;margin-top:10px}
+    .footer{padding:24px 0 30px}.footer-links{flex-wrap:wrap}.modal-card{max-height:calc(100dvh - 44px);overflow:auto}.modal-button{font-family:inherit;font-weight:650;font-size:15px;line-height:1.3}
+    @media(max-width:800px){.hero-layout{gap:28px}.product-stage{padding:22px}.hero-content .button{padding:17px 22px}.details-grid{gap:22px}}
+    @media(max-width:680px){header.wrap{padding:0 18px}.nav{height:66px}.hero{padding:24px 0 35px}.hero-layout{display:flex;flex-direction:column;gap:30px;width:calc(100% - 36px)}.hero-content{order:0;padding:0;width:100%}.hero-logo{width:66px;margin:0 0 18px}h1{font-size:clamp(37px,10.6vw,47px);line-height:1.06}.hero-content p{font-size:17px;margin-top:17px;max-width:310px}.hero-content .button{margin-top:23px;width:auto;min-width:260px;max-width:100%;min-height:58px}.hero-content .launch{margin-top:12px;font-size:12px}.product-stage{order:1;width:100%;padding:22px;border-radius:24px}.product-stage .screen{width:235px;border-radius:24px}.hero-content .download-detail{margin-top:10px}.details-section{padding:30px 0 44px}.details-intro{margin-bottom:28px}.details-intro p{font-size:16px}.details-grid{grid-template-columns:1fr;gap:22px}.detail{padding-top:19px}.detail h3{margin-bottom:5px}.ending{padding:44px 0}.ending .button{width:auto;min-width:260px;max-width:100%}.footer-row{gap:14px}.offer-details{padding:0 8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav">
-      <a class="brand" href="./"><img src="awwlist-logo.png" alt="AwwList logo"><span>AwwList</span></a>
-      <div class="navlinks">
-        <a href="#how">How it works</a>
-        <a href="#why">Why</a>
-        <a href="#faq">FAQ</a>
-        <a class="navcta" href="#download">Get the app</a>
-      </div>
-    </nav>
-  </div>
-
+  <header class="wrap"><nav class="nav" aria-label="Main navigation"><a class="brand" href="./"><img src="awwlist-logo.png" alt="AwwList"><span>AwwList</span></a><div class="nav-actions"><a class="nav-link" href="#how">How it works</a><a class="button small" data-app-store-link href="https://apps.apple.com/us/app/awwlist/id6807372613">Get AwwList</a></div></nav></header>
   <main>
-    <section class="hero"><div class="hero-inner wrap">
-      <img class="logo" src="awwlist-logo.png" alt="AwwList">
-      <div class="eyebrow rise d1">For all the tiny things they mention</div>
-      <h1 class="rise d2">Gift ideas,<br>before you forget.</h1>
-      <p class="lead rise d3">They said it once. AwwList catches it. Birthday comes around — and you show up with <em>exactly</em> the right thing. They will never recover.</p>
-      <div class="ctarow rise d4">
-        <!-- Replace href with the App Store link -->
-        <a class="cta" href="#download">Download AwwList — it’s free ↓</a>
-        <span class="micro">Free on iPhone · no spam · your list stays yours</span>
-      </div>
+    <section class="hero"><div class="wrap hero-layout">
+      <div class="product-stage"><figure class="screen"><img src="awwlist-interface.png" width="1206" height="2622" fetchpriority="high" alt="AwwList on iPhone: Lena and Noah selected, with a note being written about their favorite chocolate cookies."></figure></div>
+      <div class="hero-content"><img class="hero-logo" src="awwlist-logo.png" width="92" height="92" alt=""><h1>The little things.<br>Remembered.</h1><p>Gift ideas, photos and passing thoughts.<br>All with the person they belong to.</p><a class="button" data-app-store-link href="https://apps.apple.com/us/app/awwlist/id6807372613">Download for iPhone</a><p class="download-detail">Free to download on the App Store</p><p class="launch">Join the first 10,000 people.<br>Keep every current feature free forever.</p></div>
     </div></section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>the tiny cake they mentioned in march 🍰</span><span>wildflowers, that one walk 🌸</span><span>the bag she screenshotted twice 👜</span><span>vinyl he won’t stop talking about 🎧</span><span>the candle that smelled like vacation 🕯️</span><span>the hoodie sitting in his cart for 3 months 🛒</span><span>“omg i love this mug” — june 12th ☕</span><span>the book they almost bought, twice 📖</span><span>the tiny cake they mentioned in march 🍰</span><span>wildflowers, that one walk 🌸</span><span>the bag she screenshotted twice 👜</span><span>vinyl he won’t stop talking about 🎧</span><span>the candle that smelled like vacation 🕯️</span><span>the hoodie sitting in his cart for 3 months 🛒</span><span>“omg i love this mug” — june 12th ☕</span><span>the book they almost bought, twice 📖</span>
-      </div>
-    </div>
-
-    <section class="section" id="how"><div class="wrap">
-      <h2 class="reveal">You said you’d remember.<br>AwwList actually does.</h2>
-      <div class="grid">
-        <article class="card reveal"><div class="icon">💬</div><h3>They mention it once.</h3><p>A tiny cake. A bag. Wildflowers. Some random thing they loved three weeks ago and will never bring up again.</p></article>
-        <article class="card reveal" style="--d:.08s"><div class="icon">❤️</div><h3>You AwwList it.</h3><p>Snap a pic, drop a link, save a note. Ten seconds, tops. The thought is officially saved with the right person.</p></article>
-        <article class="card reveal" style="--d:.16s"><div class="icon">🎁</div><h3>You eat. Every time.</h3><p>Birthday? Anniversary? Random Tuesday? The perfect idea is already waiting. You just show up and win.</p></article>
-      </div>
+    <section class="details-section" id="how"><div class="wrap">
+      <div class="details-intro"><h2>You saved it somewhere.<br>Now you know where.</h2><p>The screenshot. The link. Their favorite cookies.<br>Open their name. It’s all there.</p></div>
+      <div class="details-grid"><article class="detail"><h3>Save it as it happens.</h3><p>A note, a photo or a link. Keep the thought before the conversation moves on.</p></article><article class="detail"><h3>Keep it with their name.</h3><p>Choose who it’s for. One idea can belong to more than one person.</p></article><article class="detail"><h3>Give something personal.</h3><p>When you need an idea, start with the things they already told you they love.</p></article></div>
     </div></section>
-
-    <section class="section" id="why"><div class="wrap center">
-      <p class="kicker reveal">Be honest with yourself</p>
-      <h2 class="reveal">POV: their birthday is tomorrow<br>and you have… nothing.</h2>
-      <div class="grid" style="text-align:left">
-        <article class="card card-sm reveal"><div class="icon">😅</div><h3>The “I’ll remember it” lie</h3><p>You will not. You know you will not. AwwList remembers so you can keep pretending you’re chill.</p></article>
-        <article class="card card-sm reveal" style="--d:.08s"><div class="icon">🫠</div><h3>The gift card spiral</h3><p>Not again. You’re better than this. (You are. We believe in you. Deeply.)</p></article>
-        <article class="card card-sm reveal" style="--d:.16s"><div class="icon">🧠</div><h3>The Notes app graveyard</h3><p>Thirty-two notes that just say “gift??”. AwwList is the glow-up your memory deserves.</p></article>
-      </div>
-    </div></section>
-
-    <section class="section center"><div class="wrap">
-      <p class="statement reveal">You’re not forgetful. You’re just busy <span class="hl">being iconic.</span></p>
-      <p class="sub reveal" style="--d:.1s">Let AwwList hold the tiny details while you hold the whole vibe. Be the friend who remembers. Be the plot twist. Be the reason someone screams <strong>“WAIT, HOW DID YOU KNOW?”</strong></p>
-      <p class="sub reveal" style="--d:.2s;font-weight:650;color:var(--ink)">Thoughtful is a superpower. Start using it.</p>
-    </div></section>
-
-    <section class="section" style="padding-top:0"><div class="wrap">
-      <div class="stats">
-        <div class="stat reveal"><b>3 weeks</b><span>how long “I’ll totally remember” actually lasts</span></div>
-        <div class="stat reveal" style="--d:.08s"><b>0 excuses</b><span>left — the app does the remembering for you</span></div>
-        <div class="stat reveal" style="--d:.16s"><b>100%</b><span>more “you remembered??” moments unlocked</span></div>
-      </div>
-    </div></section>
-
-    <section class="section" style="padding-top:20px"><div class="wrap center">
-      <p class="kicker reveal">The group chat has opinions</p>
-      <h2 class="reveal">Gift-giver era: <em>activated.</em></h2>
-      <div class="quotes" style="text-align:left">
-        <article class="qcard reveal"><p class="q">“my mom literally cried. awwlist said ‘she mentioned this in march’ and i said SAY LESS.”</p><span class="who">— jess, 24</span></article>
-        <article class="qcard reveal" style="--d:.08s"><p class="q">“i used to give gift cards. now i’m everyone’s favorite person. character development fr.”</p><span class="who">— marcus, 27</span></article>
-        <article class="qcard reveal" style="--d:.16s"><p class="q">“saved my bestie’s ‘i love this mug’ moment from june. her birthday was in november. she SCREAMED.”</p><span class="who">— ana, 22</span></article>
-      </div>
-    </div></section>
-
-    <section class="section" id="faq" style="padding-top:30px"><div class="wrap center">
-      <p class="kicker reveal">Quick answers</p>
-      <h2 class="reveal">Frequently asked, honestly answered.</h2>
-      <div class="faq reveal" style="text-align:left">
-        <details open><summary>Is AwwList free?</summary><p>Yep. Free to download, free to use. Remembering the people you love shouldn’t cost a thing.</p></details>
-        <details><summary>Is my gift list private?</summary><p>Your list is for your eyes only. No ads, no selling your data, no weirdness. Just you being thoughtful in peace.</p></details>
-        <details><summary>Do I need an account?</summary><p>Sign in with Apple if you want, or just start saving — whatever’s easiest. Your call.</p></details>
-        <details><summary>What do I actually save?</summary><p>Notes, photos, links, vibes. If they mentioned it, it belongs in AwwList. It takes ten seconds and saves you every time.</p></details>
-        <details><summary>iPhone only?</summary><p>For now, yes — AwwList is built iPhone-first. Android friends, we see you. Soon-ish. 💗</p></details>
-      </div>
-    </div></section>
-
-    <section id="download"><div class="wrap">
-      <div class="mega reveal">
-        <h2>stop scrolling.<br>start remembering.</h2>
-        <p>Download AwwList and become the most iconic gift-giver in your entire contact list. Your future self says thank you. Your friends just say “HOW.”</p>
-        <div class="ctarow">
-          <!-- Replace href with the App Store link -->
-          <a class="cta cta-xl cta-inv" href="#">Get AwwList — free on iPhone →</a>
-          <span class="micro" style="color:rgba(255,255,255,.85)">Coming to the App Store · takes 2 minutes to set up</span>
-        </div>
-      </div>
-    </div></section>
+    <section class="ending"><div class="wrap"><h2>“You remembered?”</h2><p>Start with someone you love.</p><a class="button" data-app-store-link href="https://apps.apple.com/us/app/awwlist/id6807372613">Download for iPhone</a><p class="download-detail">Free to download on the App Store</p><details class="offer-details"><summary>Our launch promise</summary><p>The first 10,000 people keep every feature available at launch free forever. Future features may be paid.</p></details></div></section>
   </main>
-
+  <footer class="footer"><div class="wrap footer-row"><span>© 2026 Stefan Bozovic</span><div class="footer-links"><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="https://github.com/stefanbozovic/awwlist">GitHub</a></div></div></footer>
+  <div class="modal" id="in-app-modal" hidden><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="in-app-title" aria-describedby="in-app-description"><button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button><div class="modal-main" id="modal-main"><div class="modal-icon" aria-hidden="true">↗</div><h2 id="in-app-title">Open AwwList in your browser</h2><p class="modal-copy" id="in-app-description">This in-app browser can’t open the App Store link. Open this page in your regular browser, or copy the link directly.</p><div class="modal-actions"><button class="modal-button" type="button" id="copy-store-link">Copy link</button><button class="modal-button secondary" type="button" id="show-browser-help">Show me how</button></div><p class="modal-status" id="copy-status" aria-live="polite"></p></div><div class="browser-help" id="browser-help" hidden><div class="modal-icon" aria-hidden="true">⌁</div><h2>Open in your regular browser</h2><p>The name changes between apps, but the icon and option usually look like this:</p><div class="browser-steps"><div class="browser-step"><span class="browser-symbol" aria-hidden="true">•••</span><span>Tap the menu, then choose <strong>Open in browser</strong> or <strong>Open in Safari</strong>.</span></div><div class="browser-step"><span class="browser-symbol" aria-hidden="true">⇧</span><span>If you don’t see a menu, tap the share icon and look for <strong>Open in Safari</strong>.</span></div></div><button class="modal-button secondary" type="button" id="back-to-modal">Back</button></div></div></div>
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      reveals.forEach((el) => el.classList.add('in'));
-    } else {
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        }
-      }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
-      reveals.forEach((el) => io.observe(el));
-    }
+    const appStoreUrl='https://apps.apple.com/us/app/awwlist/id6807372613',modal=document.getElementById('in-app-modal'),modalMain=document.getElementById('modal-main'),browserHelp=document.getElementById('browser-help'),copyStatus=document.getElementById('copy-status');let lastTrigger;
+    const isInAppBrowser=()=>{const ua=navigator.userAgent||'';return /FBAN|FBAV|Instagram|Line\/|Twitter|LinkedInApp|Snapchat|TikTok|Pinterest|GSA|MicroMessenger|KAKAOTALK|BytedanceWebview|wv/i.test(ua)||(/iPhone|iPad|iPod/i.test(ua)&&/AppleWebKit/i.test(ua)&&!/Safari/i.test(ua))};
+    const closeModal=()=>{modal.hidden=true;modalMain.hidden=false;browserHelp.hidden=true;copyStatus.textContent='';lastTrigger?.focus()};
+    document.querySelectorAll('[data-app-store-link]').forEach(link=>link.addEventListener('click',event=>{if(!isInAppBrowser())return;event.preventDefault();lastTrigger=link;modal.hidden=false;modal.querySelector('[data-modal-close]').focus()}));
+    document.getElementById('copy-store-link').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(appStoreUrl)}catch{const input=document.createElement('textarea');input.value=appStoreUrl;input.setAttribute('readonly','');input.style.cssText='position:fixed;opacity:0';document.body.append(input);input.select();document.execCommand('copy');input.remove()}copyStatus.textContent='App Store link copied.'});
+    document.getElementById('show-browser-help').addEventListener('click',()=>{modalMain.hidden=true;browserHelp.hidden=false;document.getElementById('back-to-modal').focus()});document.getElementById('back-to-modal').addEventListener('click',()=>{browserHelp.hidden=true;modalMain.hidden=false;document.getElementById('show-browser-help').focus()});modal.querySelector('[data-modal-close]').addEventListener('click',closeModal);modal.addEventListener('click',event=>{if(event.target===modal)closeModal()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!modal.hidden)closeModal()});
   </script>
-
-  <footer class="footer"><div class="wrap footer-row"><span>© 2026 Stefan Bozovic. All rights reserved.</span><div class="footer-links"><a href="support/">Support</a><a href="privacy/">Privacy Policy</a><a href="https://github.com/stefanbozovic/awwlist">GitHub</a></div></div></footer>
 </body>
 </html>
